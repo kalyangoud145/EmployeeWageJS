@@ -35,3 +35,16 @@ while (totalEmpHrs < MAX_WORK_HRS && totalWorkingDays < Number_Of_Working_Days) 
 let totalEmpWage = CalculateWage(totalEmpHrs);
 console.log("Total days: " + totalWorkingDays +
     " Total hrs: " + totalEmpHrs + " emp wage: " + totalEmpWage);
+//UC 7.a (i) Use Array to  calculate total emp wage foreach traversal or reduce method
+let totEmpWage = 0;
+function sum(dailyWage) {
+    totEmpWage += dailyWage;
+}
+empDailyWageArr.forEach(sum);
+console.log("UC-7A-- Total days: " + totalWorkingDays +
+    " Total hrs: " + totalEmpHrs + " emp wage: " + totEmpWage);
+// For calculating total wage
+function totalWages(totalWage, dailywage) {
+    return totalWage + dailywage;
+}
+console.log("UC-7A--Emp wage with reduce: " + empDailyWageArr.reduce(totalWages, 0));
