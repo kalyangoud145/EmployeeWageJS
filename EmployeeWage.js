@@ -25,16 +25,21 @@ function CalculateWage(empHrs) {
 let totalEmpHrs = 0;
 let totalWorkingDays = 0;
 let empDailyWageArr = new Array();
+let empDailyWageMap = new Map();
 while (totalEmpHrs < MAX_WORK_HRS && totalWorkingDays < Number_Of_Working_Days) {
     totalWorkingDays++;
     let empCheck = Math.floor(Math.random() * 10) % 3;
     let empHrs = getWorkingHours(empCheck);
     totalEmpHrs += empHrs;
     empDailyWageArr.push(CalculateWage(empHrs));
+    empDailyWageMap.set(totalWorkingDays,CalculateWage(empHrs));
 }
 let totalEmpWage = CalculateWage(totalEmpHrs);
 console.log("Total days: " + totalWorkingDays +
     " Total hrs: " + totalEmpHrs + " emp wage: " + totalEmpWage);
+// UC8 store daily wage in map
+console.log(empDailyWageMap);
+console.log("UC8---Emp wage map with reduce: " + Array.from(empDailyWageMap.values().reduce(totalWages, 0));
 //UC 7.a (i) Use Array to  calculate total emp wage foreach traversal or reduce method
 let totEmpWage = 0;
 function sum(dailyWage) {
