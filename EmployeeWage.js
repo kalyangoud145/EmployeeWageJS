@@ -72,5 +72,11 @@ console.log("7D--first occurence of full time wage on " + mapDayWithWageArr.find
 function isAllFullTimeWage(dailyWage) {
     return dailyWage.includes(160);
 }
-console.log("7E**Check if every element of full time wage is truly holding full time wage "
+console.log("7E--Check if every element of full time wage is truly holding full time wage "
     + fullDayWageArr.every(isAllFullTimeWage));
+// UC 7F Check if the wage contains any parttime wage
+function isAnyPartTimeWage(dailyWage) {
+    return dailyWage.includes("80");
+}
+console.log("UC 7F Check of any part time wage was earned or not: " +
+    mapDayWithWageArr.some(isAnyPartTimeWage));
