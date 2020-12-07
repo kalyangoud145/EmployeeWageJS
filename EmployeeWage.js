@@ -58,3 +58,9 @@ console.log("Total Hours: " + totalHours + "   Total Wage: " + totalWage);
 //UC 11.b Show the full working days using foreach
 console.log("UC 11.b Show the full working days");
 empDailyHrsAndWageArr.filter(obj => obj.dailyHours == 8).forEach(obj => process.stdout.write(obj.toString()));
+//UC 11.c Show Part working days using Map by reducing to String Array
+let partWorkingDays = empDailyHrsAndWageArr
+    .filter(obj => obj.dailyHours == 4)
+    .map(obj => obj.toString());
+console.log("UC 11.b Show part time working days");
+console.log(partWorkingDays);
