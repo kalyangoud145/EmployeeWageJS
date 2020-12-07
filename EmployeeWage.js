@@ -108,3 +108,15 @@ let totalSalary = empDailyWageArr
     .reduce(findTotal, 0);
 console.log("UC9A --emp wage with arrow:" + " Total hours:" + totalHours
     + " Total Wages:" + totalSalary);
+//UC 9.b Show the full working days, part working days, no working days
+let nonWorkingDays = new Array();
+let partWorkingDays = new Array();
+let fullWorkingDays = new Array();
+empDailyHrsMap.forEach((value, key, map) => {
+    if (value == 8) fullWorkingDays.push(key);
+    else if (value == 4) partWorkingDays.push(key);
+    else nonWorkingDays.push(key);
+});
+console.log("Full working days: " + fullWorkingDays);
+console.log("Part time working days: " + partWorkingDays);
+console.log("Non working days: " + nonWorkingDays);
