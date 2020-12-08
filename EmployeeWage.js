@@ -46,48 +46,18 @@ while (totalEmpHrs <= MAX_WORK_HRS && totalWorkingDays < Number_Of_Working_Days)
         });
 }
 console.log("UC10 store daily wage, work, hours day in a object: " + empDailyHrsAndWageArr);
-//UC 11.a Calculate total hours and wage using arrow functions
-let totalHours = empDailyHrsAndWageArr
-    .filter(obj => obj.dailyHours > 0)
-    .reduce((totalHours, obj) => totalHours += obj.dailyHours, 0);
+// UC 7.a (ii) Use Array.reduce method to calculate total emp wage
 let totalWage = empDailyHrsAndWageArr
     .filter(obj => obj.dailyWage > 0)
     .reduce((totalWage, obj) => totalWage += obj.dailyWage, 0);
-console.log("\nUC 11.a Calculate total hours and wage using arrow functions");
+console.log("\nUC 7.a Total Wage: " + totalWage);
+// UC 7.b Calculate total hours and wage using arrow functions
+let totalHours = empDailyHrsAndWageArr
+    .filter(obj => obj.dailyHours > 0)
+    .reduce((totalHours, obj) => totalHours += obj.dailyHours, 0);
+console.log("\nUC 11. A Calculate total hours and wage using arrow functions");
 console.log("Total Hours: " + totalHours + "   Total Wage: " + totalWage);
-//UC 11.b Show the full working days using foreach
-console.log("\nUC 11.b Show the full working days");
-empDailyHrsAndWageArr.filter(obj => obj.dailyHours == 8).forEach(obj => process.stdout.write(obj.toString()));
-//UC 11.c Show Part working days using Map by reducing to String Array
-let partWorkingDays = empDailyHrsAndWageArr
-    .filter(obj => obj.dailyHours == 4)
-    .map(obj => obj.toString());
-console.log("\nUC 11.c Show part time working days");
-console.log(partWorkingDays);
-//UC 11.d Show No working days using Map by reducing to String Array
-let noWorkingDays = empDailyHrsAndWageArr
-    .filter(obj => obj.dailyHours == 0)
-    .map(obj => obj.toString());
-console.log("\nUC 11.d Show no working days");
-console.log(noWorkingDays);
-// UC 7.a(i) Use Array.foreach to calculate total emp wage
-let totalEmpWage = 0;
-empDailyHrsAndWageArr.forEach((obj) =>
-    totalEmpWage += obj.dailyWage
-);
-console.log("\nUC 7.a Total Wage: " + totalEmpWage);
-
-// UC 7.a (ii) Use Array.reduce method to calculate total emp wage
-let totalWage1 = empDailyHrsAndWageArr
-    .filter(obj => obj.dailyWage > 0)
-    .reduce((totalWage, obj) => totalWage += obj.dailyWage, 0);
-console.log("\nUC 7.a Total Wage: " + totalWage1);
-// UC 7.b show the day along with daily wage using Array.map function
-let dayCounter = 0;
-function MapDayWithWage(obj) {
-    ++dayCounter;
-    return dayCounter + " = " + obj.dailyWage;
-}
-let mapWithDayAndWageArr = empDailyHrsAndWageArr.map(MapDayWithWage);
-console.log("UC 7.b Day with wage");
-console.log(mapWithDayAndWageArr);
+// UC 7.c Show the full working days 
+console.log("\nUC 7. C Show the full working days");
+let fulltimeWorkArray = empDailyHrsAndWageArr.filter(obj => obj.dailyWage == 160)
+console.log(fulltimeWorkArray);
