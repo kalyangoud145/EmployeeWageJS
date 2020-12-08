@@ -70,3 +70,15 @@ let noWorkingDays = empDailyHrsAndWageArr
     .map(obj => obj.toString());
 console.log("\nUC 11.d Show no working days");
 console.log(noWorkingDays);
+// UC 7.a(i) Use Array.foreach to calculate total emp wage
+let totalEmpWage = 0;
+empDailyHrsAndWageArr.forEach((obj) =>
+    totalEmpWage += obj.dailyWage
+);
+console.log("\nUC 7.a Total Wage: " + totalEmpWage);
+
+// UC 7.a (ii) Use Array.reduce method to calculate total emp wage
+let totalWage1 = empDailyHrsAndWageArr
+    .filter(obj => obj.dailyWage > 0)
+    .reduce((totalWage, obj) => totalWage += obj.dailyWage, 0);
+console.log("\nUC 7.a Total Wage: " + totalWage1);
