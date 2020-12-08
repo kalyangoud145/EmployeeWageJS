@@ -61,3 +61,7 @@ console.log("Total Hours: " + totalHours + "   Total Wage: " + totalWage);
 console.log("\nUC 7. C Show the full working days");
 let fulltimeWorkArray = empDailyHrsAndWageArr.filter(obj => obj.dailyWage == 160)
 console.log(fulltimeWorkArray);
+// UC 7.d find the first occurence of full time wage 
+console.log("\n7. D--first occurence of full time wage on " + empDailyHrsAndWageArr
+    .find(obj => obj.dailyWage == 160));
+
