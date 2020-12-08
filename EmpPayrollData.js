@@ -12,7 +12,11 @@ class EmployeePayrollData {
     }
     // getter and setter method
     get name() { return this._name; }
-    set name(name) { this._name = name; }
+    set name(name) {
+        let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
+        if (nameRegex.test(name)) this._name = name;
+        else throw 'Name is  in Incorrect format!';
+    }
     // method
     toString() {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -27,3 +31,9 @@ employeePayrollData.name = "Keerthi";
 console.log(employeePayrollData.toString());
 let newEmployeePayrollData = new EmployeePayrollData(1, "Smith", 3000, 'M', new Date());
 console.log(newEmployeePayrollData.toString());
+try {
+    newEmployeePayrollData.name = "rohit";
+    console.log(employeePayrollData.toString());
+} catch (e) {
+    console.error(e);
+}
