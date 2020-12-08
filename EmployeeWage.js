@@ -70,5 +70,13 @@ console.log("7E--Check if every element of full time wage is truly holding full 
 // UC 7F Check if the wage array contains any part time wage
 console.log("UC 7F Check of any part time wage was earned or not: " +
     empDailyHrsAndWageArr.some(obj => obj.dailyWage == 80));
-
+// UC 7.G Find the number of days employee worked
+function totalDaysWorked(numOfDays, obj) {
+    if (obj.dailyHours > 0) {
+        numOfDays++;
+    }
+    return numOfDays;
+}
+let daysEmpWorked = empDailyHrsAndWageArr.reduce(totalDaysWorked, 0);
+console.log("UC 7.G Number of days employee worked: " + daysEmpWorked);
 
