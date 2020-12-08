@@ -64,4 +64,8 @@ console.log(fulltimeWorkArray);
 // UC 7.d find the first occurence of full time wage 
 console.log("\n7. D--first occurence of full time wage on " + empDailyHrsAndWageArr
     .find(obj => obj.dailyWage == 160));
+// UC 7.e Check if every element of full time wage is truly holding full time wage
+console.log("7E--Check if every element of full time wage is truly holding full time wage: "
+    + fulltimeWorkArray.every(obj => obj.dailyWage == 160));
+
 
