@@ -67,5 +67,8 @@ console.log("\n7. D--first occurence of full time wage on " + empDailyHrsAndWage
 // UC 7.e Check if every element of full time wage is truly holding full time wage
 console.log("7E--Check if every element of full time wage is truly holding full time wage: "
     + fulltimeWorkArray.every(obj => obj.dailyWage == 160));
+// UC 7F Check if the wage array contains any part time wage
+console.log("UC 7F Check of any part time wage was earned or not: " +
+    empDailyHrsAndWageArr.some(obj => obj.dailyWage == 80));
 
 
