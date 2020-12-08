@@ -82,3 +82,12 @@ let totalWage1 = empDailyHrsAndWageArr
     .filter(obj => obj.dailyWage > 0)
     .reduce((totalWage, obj) => totalWage += obj.dailyWage, 0);
 console.log("\nUC 7.a Total Wage: " + totalWage1);
+// UC 7.b show the day along with daily wage using Array.map function
+let dayCounter = 0;
+function MapDayWithWage(obj) {
+    ++dayCounter;
+    return dayCounter + " = " + obj.dailyWage;
+}
+let mapWithDayAndWageArr = empDailyHrsAndWageArr.map(MapDayWithWage);
+console.log("UC 7.b Day with wage");
+console.log(mapWithDayAndWageArr);
